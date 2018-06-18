@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh '''git clone git@github.com:zCKyR6omth/test.git;
-mvn clean;'''
+        git(credentialsId: 'testcreds', url: 'git@github.com:zCKyR6omth/test.git', branch: 'master')
       }
     }
   }
